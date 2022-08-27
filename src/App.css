@@ -1,3 +1,53 @@
+body{
+  background-color: rgb(8, 8, 8);
+  color: rgb(31, 83, 31);
+  font-family: cursive;
+  text-align: justify;
+}
+
 .App {
   text-align: center;
+}
+
+.container-fluid{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+/* NavBar */
+
+nav{
+  background-color: black;
+  height:5vw;
+}
+
+.nav-link{
+  color: rgb(31, 83, 31);
+  font-size: 1.5rem;
+}
+
+.nav-link:focus{
+  color: rgb(39, 110, 39);
+  border: 2px solid rgba(255, 166, 0, 0.63);
+  border-radius: 10%;
+  padding: 5px 15px;
+}
+.nav-link:hover{
+  color: rgb(39, 110, 39);
+}
+
+li{
+  margin: 0 10px;
+}
+
+/* Header/Landing */
+
+.landing-image{
+  height: 450px;
+}
+.col-landing{
+  display: flex;
+  align-items: center;
+  text-align: justify;
 }
