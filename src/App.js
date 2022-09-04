@@ -1,11 +1,15 @@
 import './App.css'
+import ItemCount from './Components/ItemCount'
 import ItemListContainer from './Components/ItemListContainer'
 import NavBar from './Components/NavBar.jsx'
 function App() {
   return (
     <div className='App'>
       <NavBar />
-      <ItemListContainer greeting='Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.' />
+      <ItemListContainer />
+      {/* STOCK DE 10 (A MODO DE PRUEBA) */}
+      <ItemCount stock={10} initial={1} />
+      <ItemCount stock={0} initial={0} /> {/* STOCK DE 0 (A MODO DE PRUEBA)*/}
     </div>
   )
 }
