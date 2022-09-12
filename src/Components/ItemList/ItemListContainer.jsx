@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import uuid from 'react-uuid'
-import image from '../assets/cadejoFoto.jpg'
+import image from '../../assets/cadejoFoto.jpg'
 import ItemList from './ItemList'
 function ItemListContainer() {
   const [items, setItems] = useState([])
@@ -29,9 +29,7 @@ function ItemListContainer() {
 
   return (
     <>
-      <div className='container pt-4'>
         <ItemList items={items}/>
-      </div>
     </>
   )
 }

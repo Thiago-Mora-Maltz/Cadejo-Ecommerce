@@ -1,23 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import CartWidget from './CartWidget'
+import { NavLink } from 'react-router-dom'
 
 
 function NavBar() {
   return <>
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand nav-link" href="#">Cadejo Vermú Latino</a>
+        <NavLink className="navbar-brand nav-link" to='/'>Cadejo Vermú Latino</NavLink>
         <div className="">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Agendar pedido</a>
+              <NavLink className="nav-link" aria-current="page" to='/'>Agendar pedido</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Menú</a>
+              <NavLink className="nav-link" to='/'>Menú</NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#"><CartWidget/></a>
+              <NavLink className="nav-link" to='/'><CartWidget/></NavLink>
             </li>
           </ul>
         </div>
