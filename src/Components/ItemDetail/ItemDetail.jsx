@@ -6,13 +6,13 @@ function ItemDetail({item}) {
     <>
     <div className='row'>
       <div className='col-4 centrar'>
-        <img src={item.imagen} alt={item.descripcion} style={{height: '450px'}}/>
+        <img src={item.imagen} alt={item.descripcion} style={{height: '450px', width: '100%'}}/>
       </div>
       <div className="col-8 centrar">
         <h2>{item.nombre}</h2>
         <h4>{item.descripcion}</h4>
-        <p>{item.precio}</p>
-        <ItemCount stock={10} initial = {0}/>
+        <h5>{item.precio}</h5>
+        <ItemCount stock={item.stock} initial = {0}/>
       </div>
     </div>
     </>

@@ -3,6 +3,7 @@ import ItemListContainer from './Components/ItemList/ItemListContainer'
 import NavBar from './Components/common/NavBar.jsx'
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import AgendarPedido from './Components/AgendarPedido/AgendarPedido'
 function App() {
   return (
     <div className='App'>
@@ -16,6 +17,8 @@ function App() {
               element={<ItemListContainer />}
             />
             <Route path='/detalle/:id' element={<ItemDetailContainer />} />
+            <Route path='/agendarPedido' element={<AgendarPedido />} />
+            <Route path='/menu' element={<ItemListContainer />} />
           </Routes>
         </div>
       </BrowserRouter>

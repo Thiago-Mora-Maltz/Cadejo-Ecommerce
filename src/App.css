@@ -2,11 +2,10 @@ body{
   background-color: rgb(8, 8, 8);
   color: rgb(31, 83, 31);
   font-family: cursive;
-  text-align: justify;
 }
 
 .App {
-  text-align: center;
+  text-align: justify;
 }
 
 .container-fluid{
@@ -56,4 +55,13 @@ li{
   display: flex;
   align-items: center;
   text-align: justify;
+}
+
+/* Item Cards */
+
+.card-body{
+  display: flex;
+  align-content: space-around;
+flex-wrap: wrap;
+justify-content: center;
 }

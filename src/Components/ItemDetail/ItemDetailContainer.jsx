@@ -1,27 +1,32 @@
 import React,  {useState } from 'react'
 import { useEffect } from 'react'
-import image from '../../assets/cadejoFoto.jpg'
+import { arrayItems } from '../getItems'
 import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom'
+import Spinner from '../common/Spinner'
+
 function ItemDetailContainer() {
   const [item, setItem] = useState([])
+  const [cargando, setCargando] = useState(true)
+  const { id } = useParams()
 
-  useEffect(()=>{
-    const objItem = 
-    {nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `$${500}`, imagen: image};
+  useEffect(()=>{ 
+    let objItem = {}
 
     const getItem = new Promise ((res)=>{
-      setTimeout(()=>{
+      setTimeout(() =>{
+        objItem = arrayItems.find(item => item.id === parseInt(id))
         res(objItem)
+        setCargando(false)
       }, 1000)
     })
 
     getItem.then(res => setItem(res));
-
-  }, []);
+  }, [id]);
   
   return (
     <>
-    <ItemDetail item={item}/>
+    {cargando ? <Spinner/> : <ItemDetail item={item} />}
     </>
   )
 }

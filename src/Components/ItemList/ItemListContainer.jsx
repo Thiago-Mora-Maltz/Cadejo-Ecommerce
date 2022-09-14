@@ -1,35 +1,32 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
-import uuid from 'react-uuid'
-import image from '../../assets/cadejoFoto.jpg'
+import { useParams } from 'react-router-dom' 
+import Spinner from '../common/Spinner'
+import { getItems, arrayItems } from '../getItems'
 import ItemList from './ItemList'
+
 function ItemListContainer() {
   const [items, setItems] = useState([])
+  const [cargando, setCargando] = useState(true)
+  const {categoria} = useParams() 
   
   useEffect(() =>{
-    const arrayItems = [
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image},
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image},
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image},
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image},
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image},
-      {id: uuid(), nombre: 'Cadejo Vermú', descripcion: 'Inspirado del folclor barroco de la ciudad de la eterna primavera, Cadejo perro espectral aparece en los caminos nocturnos de aquellxs que beben para acompañarlos en su camino de vuelta.', precio: `${500}$`, imagen: image}
-    ]
-    const getItems = new Promise((res)=>{
-      setTimeout(()=>{
-        res(arrayItems)
-      }, 2000);
-    });
-
     getItems.then((res)=>{
-      setItems(res)
+      if(!categoria){
+        setItems(res)
+        setCargando(false)
+      }else{
+        const arrayFiltrado = arrayItems.filter(item => item.categoria === categoria)
+        setItems(arrayFiltrado)
+        setCargando(false)
+      }
     })
-  }, []);
 
-
+  }, [categoria]);
+  
   return (
     <>
-        <ItemList items={items}/>
+      {cargando ? <Spinner/> : <ItemList items={items} />}
     </>
   )
 }
