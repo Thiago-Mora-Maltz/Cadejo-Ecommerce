@@ -20,6 +20,14 @@ body{
   flex-wrap: wrap;
 }
 
+.display-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* NavBar */
 
 nav{

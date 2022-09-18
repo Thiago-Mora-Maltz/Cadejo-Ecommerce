@@ -19,6 +19,7 @@ function App() {
             <Route path='/detalle/:id' element={<ItemDetailContainer />} />
             <Route path='/agendarPedido' element={<AgendarPedido />} />
             <Route path='/menu' element={<ItemListContainer />} />
+            <Route path='/cart' element={<AgendarPedido />} />
           </Routes>
         </div>
       </BrowserRouter>
@@ -27,10 +28,3 @@ function App() {
 }
 
 export default App
-
-// {/* <ItemListContainer />
-// <ItemDetailContainer />
-// {/* STOCK DE 10 (A MODO DE PRUEBA) */}
-// <ItemCount stock={10} initial={1} />
-// <ItemCount stock={0} initial={0} />{' '}
-// STOCK DE 0 (A MODO DE PRUEBA) */}
