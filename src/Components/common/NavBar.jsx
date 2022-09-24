@@ -9,7 +9,7 @@ function NavBar() {
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <Link className="navbar-brand nav-link" to='/'>Cadejo Vermú Latino</Link>
-        <div className="">
+        <div >
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link to={`/categoria/comida`} className="nav-link">Comidas</Link>
@@ -24,7 +24,7 @@ function NavBar() {
               <Link className="nav-link" to='/'>Menú</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/'><CartWidget/></Link>
+              <Link className="nav-link" to='/cart'><CartWidget/></Link>
             </li>
           </ul>
         </div>

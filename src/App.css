@@ -13,6 +13,11 @@ body{
   padding-right: 30px;
 }
 
+.container{
+  display: flex;
+  justify-content: center;
+}
+
 .centrar{
   display: flex;
   justify-content: center;
@@ -49,6 +54,9 @@ nav{
 .nav-link:hover{
   color: rgb(39, 110, 39);
 }
+.pointer-click:hover{
+  cursor: pointer;
+}
 
 li{
   margin: 0 10px;
@@ -72,4 +80,10 @@ li{
   align-content: space-around;
 flex-wrap: wrap;
 justify-content: center;
+}
+
+.ul-detail{
+  display: flex;
+  justify-content: space-between;
+
 }

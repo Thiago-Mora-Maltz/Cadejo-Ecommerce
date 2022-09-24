@@ -25,8 +25,14 @@ const CartProvider = ({children}) => {
     
     const clearCart = () => setCart([])      //Vaciar Carrito
 
+    const sumaPrecioCart = () => {
+        return cart.reduce((total, item) => total+=(item.cantidad * parseInt(item.precio)), 0);
+        }
+
+    const sumaProductosCart = () => cart.reduce((total, item) => total += item.cantidad, 0)
+
     return (
-    <CartContext.Provider value={{cart, addToCart, isInCart, removeItem, clearCart}}>
+    <CartContext.Provider value={{cart, addToCart, isInCart, removeItem, clearCart, sumaPrecioCart, sumaProductosCart}}>
         {children}
     </CartContext.Provider>
   )
