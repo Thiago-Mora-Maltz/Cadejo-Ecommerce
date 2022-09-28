@@ -17,6 +17,9 @@ body{
   display: flex;
   justify-content: center;
 }
+.row{
+  width: 100%;
+}
 
 .centrar{
   display: flex;
