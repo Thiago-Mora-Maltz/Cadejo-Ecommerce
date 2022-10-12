@@ -30,7 +30,7 @@ function CartFrom({cart, sumaPrecioCart, clearCart, handleId}) {
 
     return (
     <>
-            <form style={{width: '50%'}} onSubmit={(e)=>sendOrder(e)}>
+            <form className='form' onSubmit={(e)=>sendOrder(e)}>
                     <div className="mb-3">
                         <label htmlFor="nombre" className="form-label">Nombre</label>
                         <input type="text" className="form-control" id="nombre" onChange={(e) => setNombre(e.target.value)}/>

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AgendarPedido from './Components/AgendarPedido/AgendarPedido'
 import CartProvider from './Components/context/CartContext'
 import Cart from './Components/Cart/Cart'
+import Hero from './Components/Hero'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <NavBar />
+          <Hero/>
           <div className='container pt-5'>
             <Routes>
               <Route path='/' element={<ItemListContainer />} />
@@ -24,6 +26,7 @@ function App() {
               <Route path='/agendarPedido' element={<AgendarPedido />} />
               <Route path='/menu' element={<ItemListContainer />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path='*' element={<ItemListContainer />} /> 
             </Routes>
           </div>
         </BrowserRouter>
@@ -31,5 +34,9 @@ function App() {
     </div>
   )
 }
+
+//Chequear stock antes de realizar compra.
+//Arreglar tema loading / no hay stock disponible
+//
 
 export default App

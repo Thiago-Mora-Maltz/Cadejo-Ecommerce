@@ -27,12 +27,12 @@ function ItemCount({stock, initial, onAdd}) {
 
   return (
     <>
-        <div className="btn-group" role="group">
+        <div className="btn-group mb-4" role="group">
             <button type="button" className={`btn btn-outline-secondary ${stock <= 0 ? `disabled` : ''}`} onClick={resta} >-1</button>
             <input type='text' value={Number(valor)} onChange={handleOnChange} disabled={stock <= 0 ? 'disabled' : ''} />
             <button type="button" className={`btn btn-outline-secondary ${stock <= 0 ? `disabled` : ''}`} onClick={suma}>+1</button>
+        </div>  
             <button className='btn btn-outline-primary' onClick={()=>onAdd(valor)}>Agregar al carrito</button>
-        </div>
     </>
   )
 }

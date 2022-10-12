@@ -38,9 +38,10 @@ body{
 
 /* NavBar */
 
-nav{
+.navbar{
   background-color: black;
-  height:5vw;
+  padding: 15px;
+  height:10vh;
 }
 
 .nav-link{
@@ -81,12 +82,40 @@ li{
 .card-body{
   display: flex;
   align-content: space-around;
-flex-wrap: wrap;
-justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ul-detail{
   display: flex;
   justify-content: space-between;
 
+}
+.jumbotron {
+  color: white;
+  background-image: url("https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 90vh;
+}
+
+/* Form */
+.cartItems{
+  width: 70%;
+}
+
+.form{
+  width: 50%;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .form {
+    width: 80%;
+  }
+  .cartItems{
+    width: 80%;
+  }
 }

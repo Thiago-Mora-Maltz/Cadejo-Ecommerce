@@ -15,14 +15,16 @@ function ItemDetailContainer() {
     const producto = doc(db, 'productos', id)
     getDoc(producto)
       .then(res => {setItem({id: res.id, ...res.data()})})
-      .finally(setCargando(false))
+      .then(setCargando(false))
   }, [id]);
   
   return (
     <>
-    {cargando ? <Spinner/> : <ItemDetail item={item} />}
+    {cargando ? 
+      <Spinner/> 
+      : 
+      item.nombre ? <ItemDetail item={item}/> : 'No existe el producto'}
     </>
   )
 }
-
 export default ItemDetailContainer
