@@ -1,7 +1,8 @@
 body{
   background-color: rgb(8, 8, 8);
-  color: rgb(31, 83, 31);
-  font-family: cursive;
+  /* color: #3af49f  ; */
+  color: #079D5C;
+  font-family: 'Alkalami';
 }
 
 .App {
@@ -36,34 +37,80 @@ body{
   flex-wrap: wrap;
 }
 
+/* Buttons */
+
+.button {
+  background-color: transparent;
+  border: .5px solid #079D5C;
+  border-radius: 8%;
+  color: #079D5C;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button:hover{
+  background-color: #079D5C;
+  color: black;
+  transition: 500ms;
+}
+
 /* NavBar */
 
 .navbar{
+  position: sticky;
+  top: 0;
   background-color: black;
   padding: 15px;
   height:10vh;
+  z-index: 2000;
+}
+
+.navbar-brand{
+  color: #3af49f ;
+  font-size: 1.5rem;
+}
+
+.navbar-brand:hover{
+  color: #226F54;
+}
+
+.navbar-brand:focus{
+  color: #3af49f;
 }
 
 .nav-link{
-  color: rgb(31, 83, 31) !important;
+  color: #3af49f ;
   font-size: 1.5rem;
 }
 
 .nav-link:focus{
-  color: rgb(39, 110, 39);
-  border: 2px solid rgba(255, 166, 0, 0.63);
-  border-radius: 10%;
-  padding: 5px 15px;
+  color: #226F54;
 }
 .nav-link:hover{
-  color: rgb(39, 110, 39);
+  color: #226F54;
 }
+
 .pointer-click:hover{
   cursor: pointer;
 }
 
 li{
   margin: 0 10px;
+}
+
+.dropdown-menu{
+  background-color: black;
+  color: #3af49f;
+}
+.dropdown-item{
+  background-color: black;
+  color: #3af49f;
+}
+.dropdown-item:hover{
+  background-color: black;
+  color: #079D5C;
 }
 
 /* Header/Landing */
@@ -79,11 +126,30 @@ li{
 
 /* Item Cards */
 
-.card-body{
+.card-menu{
   display: flex;
-  align-content: space-around;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-body-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #1b1b1bcc;
+  width: 100%;
+  height: 300px;
+  color: #079D5C;
+  font-family: 'Alkalami';
+  border-radius: 5%;
+}
+.card-menu:hover .card-body-menu{
+  transform: translateY(-100%);
+  transition: 300ms;
 }
 
 .ul-detail{
@@ -93,11 +159,11 @@ li{
 }
 .jumbotron {
   color: white;
-  background-image: url("https://images.unsplash.com/photo-1438109491414-7198515b166b?q=80&fm=jpg&s=cbdabf7a79c087a0b060670a6d79726c");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 90vh;
+}
+.hero{
+  width: 50%;
+  height: 100%;
 }
 
 /* Form */
@@ -107,6 +173,31 @@ li{
 
 .form{
   width: 50%;
+}
+
+/* Cart */
+
+.cart-row{
+  font-size: 2rem;
+}
+.ul-detail{
+  display: flex;
+  align-items: center;
+  height: 15vh;
+  padding: 15px 0px;
+  box-sizing: border-box;
+}
+
+.trash-icon:hover{
+  background-color: hsl(0, 0%, 27%);
+  border-radius: 5%;
+  transition: 300ms;
+}
+
+.image-cart{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 /* Responsive */

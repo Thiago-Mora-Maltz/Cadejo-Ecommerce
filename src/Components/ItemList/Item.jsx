@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 function Item({nombre, id, descripcion, image}) {
   return (
     <>
-        <div className="card" style={{width: '18rem', height: '500px'}}>
-            <img src={image} className="card-img-top" alt={descripcion} style={{ height: '50%'}}/> 
-            <div className="card-body" style={{  backgroundColor : 'rgb(8, 8, 8)'}}>
-                <h5 className="card-title" style={{width: '100%',textAlign: 'center'}}>{nombre}</h5>
-                <Link to={`/detalle/${id}`} className="btn btn-outline-secondary">Ver más</Link>
-            </div>
+    <div className="card-menu mx-3 my-3">
+        <img style={{width: '100%', height: '100%', borderRadius: '5%'}} src={image} alt=''/>
+        <div className='card-body-menu'>
+          <h3 style={{width: '100%', textAlign: 'center'}}>{nombre}</h3>
+        <Link to={`/detalle/${id}`} style={{textDecoration: 'none'}}>
+          <button className='button'>Ver más</button>
+        </Link>
         </div>
+    </div>
     </>
   )
 }

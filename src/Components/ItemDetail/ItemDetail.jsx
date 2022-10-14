@@ -8,16 +8,21 @@ function ItemDetail({item}) {
   const [carrito, setCarrito] = useState(true)
   const {addToCart} = useContext(CartContext)
   const onAdd = (valor) => {
-    setCantidad(valor)
-    addToCart(item, valor)
-    setCarrito(false)
+    if(valor > 0){
+      setCantidad(valor)
+      addToCart(item, valor)
+      setCarrito(false)
+    }else{
+      alert('Debes agregar al menos 1 producto')
+    }
+
   }
 
   return (
     <>
     <div className='row'>
       <div className='col-lg-4 col-sm-12 col-12 centrar mb-4'>
-        <img src={item.imagen} alt={item.descripcion} style={{height: '450px', width: '100%'}}/>
+        <img src={item.imagen} alt='' style={{height: '450px', width: '100%'}}/>
       </div>
       <div className="col-lg-8 col-sm-12 col-12 display-column">
         <h2>{item.nombre}</h2>

@@ -14,8 +14,7 @@ function ItemListContainer() {
     const itemCollection = collection(db, 'productos');
     const queryItems = categoria ? query(itemCollection, where('categoria', '==', categoria)) : itemCollection
     getDocs(queryItems)
-      .then(res => setItems(res.docs.map(item => ({id: item.id, ...item.data()}))))
-      .then(setCargando(false))
+      .then(res => setItems(res.docs.map(item => ({id: item.id, ...item.data()})))).finally(()=> setCargando(false))
     }, [categoria]);
   return (
       <>

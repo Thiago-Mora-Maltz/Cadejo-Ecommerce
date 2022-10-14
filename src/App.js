@@ -5,31 +5,39 @@ import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AgendarPedido from './Components/AgendarPedido/AgendarPedido'
 import CartProvider from './Components/context/CartContext'
+import UserProvider from './Components/context/UserContext'
 import Cart from './Components/Cart/Cart'
 import Hero from './Components/Hero'
+import LogInForm from './Components/LogInForm'
+import CartFrom from './Components/CartFrom'
 
 function App() {
   return (
     <div className='App'>
       <CartProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Hero/>
-          <div className='container pt-5'>
-            <Routes>
-              <Route path='/' element={<ItemListContainer />} />
-              <Route
-                path='/categoria/:categoria'
-                element={<ItemListContainer />}
-              />
-              <Route path='/detalle/:id' element={<ItemDetailContainer />} />
-              <Route path='/agendarPedido' element={<AgendarPedido />} />
-              <Route path='/menu' element={<ItemListContainer />} />
-              <Route path='/cart' element={<Cart />} />
-              <Route path='*' element={<ItemListContainer />} /> 
-            </Routes>
-          </div>
-        </BrowserRouter>
+        <UserProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Hero />
+            <div className='container pt-5 centrar'>
+              <Routes>
+                <Route path='/' element={<ItemListContainer />} />
+                <Route
+                  path='/categoria/:categoria'
+                  element={<ItemListContainer />}
+                />
+                <Route path='/detalle/:id' element={<ItemDetailContainer />} />
+                <Route path='/agendarPedido' element={<AgendarPedido />} />
+                <Route path='/menu' element={<ItemListContainer />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path='/form' element={<CartFrom />} />
+                <Route path='/login' element={<LogInForm />} />
+                <Route path='/registrarse' element={<LogInForm />} />
+                <Route path='*' element={<ItemListContainer />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </UserProvider>
       </CartProvider>
     </div>
   )

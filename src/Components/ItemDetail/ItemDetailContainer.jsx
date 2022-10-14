@@ -11,13 +11,13 @@ function ItemDetailContainer() {
   const [cargando, setCargando] = useState(true)
   const { id } = useParams()
 
-  useEffect(()=>{ 
+  useEffect(() =>{ 
     const producto = doc(db, 'productos', id)
     getDoc(producto)
-      .then(res => {setItem({id: res.id, ...res.data()})})
-      .then(setCargando(false))
-  }, [id]);
-  
+      .then(res => {setItem({id: res.id, ...res.data()})
+    }).finally(()=> setCargando(false))
+    }, [id])
+    
   return (
     <>
     {cargando ? 
