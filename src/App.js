@@ -1,15 +1,15 @@
 import './App.css'
 import ItemListContainer from './Components/ItemList/ItemListContainer'
-import NavBar from './Components/common/NavBar.jsx'
+import NavBar from './Components/common/navbar/NavBar.jsx'
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AgendarPedido from './Components/AgendarPedido/AgendarPedido'
 import CartProvider from './Components/context/CartContext'
 import UserProvider from './Components/context/UserContext'
 import Cart from './Components/Cart/Cart'
-import Hero from './Components/Hero'
-import LogInForm from './Components/LogInForm'
-import CartFrom from './Components/CartFrom'
+import Hero from './Components/Hero/Hero'
+import LogInForm from './Components/LogInForm/LogInForm'
+import CartFrom from './Components/CartForm/CartFrom'
 
 function App() {
   return (

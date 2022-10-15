@@ -1,7 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import imageVaso from '../assets/imageHero.jpg'
-import imageDescripcion from '../assets/cadejoDescripcion.jpg'
+import imageVaso from '../../assets/imageHero.jpg'
+import imageDescripcion from '../../assets/cadejoDescripcion.jpg'
+import './hero.css'
 function Hero() {
     const { pathname } = useLocation()
 

@@ -1,0 +1,46 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    background-color: black;
+    padding: 15px;
+    height:10vh;
+    z-index: 2000;
+  }
+  
+  .navbar-brand{
+    color: #3af49f ;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-brand:hover{
+    color: #226F54;
+  }
+  
+  .navbar-brand:focus{
+    color: #3af49f;
+  }
+  
+  .nav-link{
+    color: #3af49f ;
+    font-size: 1.5rem;
+  }
+  
+  .nav-link:focus{
+    color: #226F54;
+  }
+  .nav-link:hover{
+    color: #226F54;
+  }
+  
+  .dropdown-menu{
+    background-color: black;
+    color: #3af49f;
+  }
+  .dropdown-item{
+    background-color: black;
+    color: #3af49f;
+  }
+  .dropdown-item:hover{
+    background-color: black;
+    color: #079D5C;
+  }

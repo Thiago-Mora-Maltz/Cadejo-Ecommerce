@@ -1,13 +1,13 @@
 import React from 'react'
-import CartWidget from './CartWidget'
+import CartWidget from '../CartWidget'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { getAuth, signOut} from 'firebase/auth'
 import { useEffect } from 'react'
-import { UserContext } from '../context/UserContext'
+import { UserContext } from '../../context/UserContext'
 import { useContext } from 'react'
-
+import './navbar.css'
 function NavBar() {
   const { user, setUser } = useContext(UserContext)
   const auth = getAuth();

@@ -1,0 +1,26 @@
+.card-menu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-body-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #1b1b1bcc;
+    width: 100%;
+    height: 300px;
+    color: #079D5C;
+    font-family: 'Alkalami';
+    border-radius: 5%;
+}
+
+.card-menu:hover .card-body-menu{
+    transform: translateY(-100%);
+    transition: 300ms;
+  }

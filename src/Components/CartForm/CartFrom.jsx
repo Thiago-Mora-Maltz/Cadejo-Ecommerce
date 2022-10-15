@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useContext } from "react"
-import {CartContext} from './context/CartContext'
+import {CartContext} from '../context/CartContext'
 function CartFrom() {
     const [nombre, setNombre] = useState()
     const [email, setEmail] = useState()

@@ -14,9 +14,10 @@ function ItemDetailContainer() {
   useEffect(() =>{ 
     const producto = doc(db, 'productos', id)
     getDoc(producto)
-      .then(res => {setItem({id: res.id, ...res.data()})
-    }).finally(()=> setCargando(false))
-    }, [id])
+      .then(res => {setItem({id: res.id, ...res.data()})})
+      .then(() => localStorage.setItem('cart', item)) //SE AGREGO ESTA LINEA
+      .finally(()=> setCargando(false))
+    }, [id, item])
     
   return (
     <>

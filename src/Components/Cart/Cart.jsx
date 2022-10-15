@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext } from "react"
 import {CartContext} from '../context/CartContext'
 import CartDetail from './CartDetail'
-
+import './cart.css'
 function Cart() {
     const {cart, sumaProductosCart, sumaPrecioCart} = useContext(CartContext)
 
