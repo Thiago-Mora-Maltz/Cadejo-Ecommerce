@@ -1,13 +1,11 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
 function Spinner() {
   return (
     <>
-        <div className='centrar'>
-            <h3><FontAwesomeIcon icon={faSpinner} style={{marginRight: '10px'}}/></h3>
-            <h3>Cargando...</h3>
-        </div>
+      <div className="spinner-border text-success" role="status" style={{fontSize: '25px', height: '50px', width: '50px'}}>
+        <span className="visually-hidden">Cargando...</span>
+      </div>
     </>
   )
 }

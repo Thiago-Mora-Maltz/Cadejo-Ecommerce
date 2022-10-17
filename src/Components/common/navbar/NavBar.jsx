@@ -73,24 +73,3 @@ return <>
 }
 
 export default NavBar
-
-
-        // <div className='collapse navbar-collapse'id="navbarSupportedContent">
-        //   <ul className="navbar-nav">
-        //     <li className="nav-item">
-        //       <Link to={`/categoria/comida`} className="nav-link">Comidas</Link>
-        //     </li>
-        //     <li classNamtoe="nav-item">
-        //       <Link to={`/categoria/bebida`} className="nav-link">Bebidas</Link>
-        //     </li>
-        //     <li className="nav-item">
-        //       <Link to={`/agendarPedido`} className="nav-link" aria-current="page">Agendar pedido</Link>
-        //     </li>
-        //     <li className="nav-item">
-        //       <Link className="nav-link" to='/'>Menú</Link>
-        //     </li>
-        //     <li className="nav-item">
-        //       <Link className="nav-link" to='/cart'><CartWidget/></Link>
-        //     </li>
-        //   </ul>
-        // </div>

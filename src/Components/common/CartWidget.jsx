@@ -9,7 +9,7 @@ import { useEffect } from 'react'
 function CartWidget() {
   const {sumaProductosCart} = useContext(CartContext)
   const [cantProductos, setCantProductos] = useState()
-  useEffect(() => setCantProductos(sumaProductosCart()))
+  useEffect(() => setCantProductos(sumaProductosCart()), [sumaProductosCart])
   return (
     <>
       <FontAwesomeIcon icon={faCartShopping} />

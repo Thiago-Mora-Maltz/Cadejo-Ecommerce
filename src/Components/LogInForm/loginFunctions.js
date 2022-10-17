@@ -8,17 +8,9 @@ import {
 
 export const auth = getAuth()
 
-export const registrarse = async (
-  e,
-  correo1,
-  correo2,
-  password,
-  setUser,
-  setError
-) => {
-  e.preventDefault()
-  return correo1 === correo2
-    ? await createUserWithEmailAndPassword(auth, correo1, password)
+export const registrarse = async (obj, setUser, setError) => {
+  return obj.email1 === obj.email2
+    ? await createUserWithEmailAndPassword(auth, obj.email1, obj.email2)
         .then((userCredential) => {
           const correoUser = JSON.stringify(userCredential.user.email)
           localStorage.setItem('user', correoUser)
@@ -31,9 +23,8 @@ export const registrarse = async (
     : setError(true)
 }
 
-export const logIn = async (e, correo1, password, setUser) => {
-  e.preventDefault()
-  return await signInWithEmailAndPassword(auth, correo1, password)
+export const logIn = async (obj, setUser) => {
+  return await signInWithEmailAndPassword(auth, obj.email1, obj.password)
     .then((userCredential) => {
       const correoUser = JSON.stringify(userCredential.user.email)
       localStorage.setItem('user', correoUser)

@@ -1,22 +1,8 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from '../common/ItemCount'
-import {CartContext} from '../context/CartContext'
+import ItemCountContainer from '../common/ItemCount/ItemCountContainer'
 
-function ItemDetail({item}) {
-  const [cantidad, setCantidad] = useState(0)
-  const [carrito, setCarrito] = useState(true)
-  const {addToCart} = useContext(CartContext)
-  const onAdd = (valor) => {
-    if(valor > 0){
-      setCantidad(valor)
-      addToCart(item, valor)
-      setCarrito(false)
-    }else{
-      alert('Debes agregar al menos 1 producto')
-    }
-
-  }
+function ItemDetail({item, carrito, onAdd}) {
 
   return (
     <>
@@ -28,11 +14,12 @@ function ItemDetail({item}) {
         <h2>{item.nombre}</h2>
         <h4>{item.descripcion}</h4>
         <h5 className='mb-4'>{item.precio}</h5>
-        {carrito ? <ItemCount stock={item.stock} initial = {0} onAdd={onAdd}/> : <Link style={{textDecoration: 'none'}} to='/cart'>Ir al carrito</Link>}
+        {carrito ? <ItemCountContainer stock={item.stock} initial = {0} onAdd={onAdd}/> : <Link style={{textDecoration: 'none'}} to='/cart'>Ir al carrito</Link>}
       </div>
     </div>
     </>
   )
+  
 }
 
 export default ItemDetail

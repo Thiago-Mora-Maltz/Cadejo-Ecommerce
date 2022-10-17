@@ -6,10 +6,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AgendarPedido from './Components/AgendarPedido/AgendarPedido'
 import CartProvider from './Components/context/CartContext'
 import UserProvider from './Components/context/UserContext'
-import Cart from './Components/Cart/Cart'
 import Hero from './Components/Hero/Hero'
 import LogInForm from './Components/LogInForm/LogInForm'
-import CartFrom from './Components/CartForm/CartFrom'
+import CartFormContainer from './Components/CartForm/CartFormContainer'
+import CartListContainer from './Components/Cart/CartListContainer'
 
 function App() {
   return (
@@ -29,8 +29,8 @@ function App() {
                 <Route path='/detalle/:id' element={<ItemDetailContainer />} />
                 <Route path='/agendarPedido' element={<AgendarPedido />} />
                 <Route path='/menu' element={<ItemListContainer />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/form' element={<CartFrom />} />
+                <Route path='/cart' element={<CartListContainer />} />
+                <Route path='/cartForm' element={<CartFormContainer />} />
                 <Route path='/login' element={<LogInForm />} />
                 <Route path='/registrarse' element={<LogInForm />} />
                 <Route path='*' element={<ItemListContainer />} />
