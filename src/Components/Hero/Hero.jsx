@@ -11,8 +11,8 @@ function Hero() {
         {
         pathname === '/' ?
         <div className="jumbotron jumbotron-fluid">
-          <img src={imageVaso} alt='' className='hero'/>
-          <img src={imageDescripcion} alt='' className='hero'/>
+          <img src={imageVaso} alt='' className='hero1'/>
+          <img src={imageDescripcion} alt='' className='hero2'/>
         </div>
             :
         ''

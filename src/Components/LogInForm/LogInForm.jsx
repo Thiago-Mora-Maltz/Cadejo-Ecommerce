@@ -1,11 +1,9 @@
 import React from 'react'
-import  * as funciones  from './loginFunctions'
 import { useForm } from 'react-hook-form'
 
 
-function LogInForm( { logIn } ) {
+function LogInForm( { logIn, signInWithGoogle} ) {
     const { register, handleSubmit, formState: {errors}} = useForm()
-
     return (
     <>
         <form className='form' onSubmit={handleSubmit(logIn)}>
@@ -19,7 +17,7 @@ function LogInForm( { logIn } ) {
             <input type="password" className="form-control" id="password" {...register('password', {required: true})}/>
             {errors.password && <span className='text-danger'>El campo es obligatorio</span>}
         </div>
-        <button className='mb-3 btn btn-outline-primary' onClick={funciones.signInWithGoogle}>Ingresar con Google</button> <br/>
+        <button className='mb-3 btn btn-outline-primary' onClick={() => signInWithGoogle()}>Ingresar con Google</button> <br/>
         <button className="button" type='submit'>Iniciar sesion</button>
         </form>
     </>

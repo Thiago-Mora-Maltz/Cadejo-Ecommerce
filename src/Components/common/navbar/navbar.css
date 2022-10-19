@@ -48,3 +48,8 @@
     background-color: black;
     color: #079D5C;
   }
+  .logOut{
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+  }

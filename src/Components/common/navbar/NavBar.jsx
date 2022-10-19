@@ -32,7 +32,7 @@ return <>
           {
             user ? 
               <li className="nav-item">
-                <button className='nav-link btn btn-outline-secondary' onClick={logOut}>Cerrar sesion</button>
+                <button className='nav-link logOut' onClick={logOut}>Cerrar sesion</button>
               </li>
               :
               <>

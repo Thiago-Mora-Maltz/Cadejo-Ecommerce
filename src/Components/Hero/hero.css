@@ -2,8 +2,17 @@
     color: white;
     height: 90vh;
   }
-  .hero{
+  .hero1, .hero2{
     width: 50%;
     height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .hero1 {
+      display: none;
+    }
+    .hero2{
+      width: 100%;
+    }
   }
   

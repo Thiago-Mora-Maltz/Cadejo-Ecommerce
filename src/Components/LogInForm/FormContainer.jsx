@@ -13,20 +13,24 @@ function FormContainer() {
   const { setUser } = useContext(UserContext)
   const navigate = useNavigate()
 
-  const registrarse = async (obj) => {
-      await funciones.registrarse(obj, setUser, setError)
+  const registrarse = (obj) => {
+      funciones.registrarse(obj, setUser, setError)
       .then(navigate('/'))
   }
-  const logIn = async (obj) => {
-      await funciones.logIn(obj, setUser)
+  const logIn = (obj) => {
+      funciones.logIn(obj, setUser)
       .then(navigate('/'))
+  }
+  const signInWithGoogle = () => {
+    funciones.signInWithGoogle()
+    .then(navigate('/'))
   }
   return (
     <>
     {   pathname === '/login' ?
-        <LogInForm  logIn={logIn}/>
+        <LogInForm  logIn={logIn} signInWithGoogle={signInWithGoogle}/>
         :
-        <SignUpForm value={{registrarse: registrarse, signInWithGoogle: funciones.signInWithGoogle, error: error}}/>
+        <SignUpForm registrarse={registrarse} signInWithGoogle={signInWithGoogle} error={error}/>
     }
     </>
   )

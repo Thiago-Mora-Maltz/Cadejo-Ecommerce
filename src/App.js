@@ -1,14 +1,14 @@
 import './App.css'
 import ItemListContainer from './Components/ItemList/ItemListContainer'
-import NavBar from './Components/common/navbar/NavBar.jsx'
 import ItemDetailContainer from './Components/ItemDetail/ItemDetailContainer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartProvider from './Components/context/CartContext'
 import UserProvider from './Components/context/UserContext'
 import Hero from './Components/Hero/Hero'
-import LogInForm from './Components/LogInForm/LogInForm'
 import CartFormContainer from './Components/CartForm/CartFormContainer'
 import CartListContainer from './Components/Cart/CartListContainer'
+import FormContainer from './Components/LogInForm/FormContainer'
+import NavBarContainer from './Components/common/navbar/NavBarContainer'
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <CartProvider>
         <UserProvider>
           <BrowserRouter>
-            <NavBar />
+            <NavBarContainer />
             <Hero />
             <div className='container pt-5 centrar'>
               <Routes>
@@ -29,8 +29,8 @@ function App() {
                 <Route path='/menu' element={<ItemListContainer />} />
                 <Route path='/cart' element={<CartListContainer />} />
                 <Route path='/cartForm' element={<CartFormContainer />} />
-                <Route path='/login' element={<LogInForm />} />
-                <Route path='/registrarse' element={<LogInForm />} />
+                <Route path='/login' element={<FormContainer />} />
+                <Route path='/registrarse' element={<FormContainer />} />
                 <Route path='*' element={<ItemListContainer />} />
               </Routes>
             </div>

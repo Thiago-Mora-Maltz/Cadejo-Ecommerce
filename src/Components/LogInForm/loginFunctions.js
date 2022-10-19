@@ -5,27 +5,32 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from 'firebase/auth'
+import Swal from 'sweetalert2'
 
-const auth = getAuth()
-export default auth
+export const auth = getAuth()
 
-export const registrarse = async (obj, setUser, setError) => {
-  return obj.email1 === obj.email2
-    ? await createUserWithEmailAndPassword(auth, obj.email1, obj.email2)
+export const registrarse = (obj, setUser, setError) => {
+  obj.email1 === obj.email2
+    ? createUserWithEmailAndPassword(auth, obj.email1, obj.email2)
         .then((userCredential) => {
           const correoUser = JSON.stringify(userCredential.user.email)
           localStorage.setItem('user', correoUser)
           setUser(correoUser)
         })
         .catch((err) => {
-          alert('email already in use')
+          Swal.fire({
+            title: 'Error!',
+            text: 'Ha ocurrido un error',
+            icon: 'error',
+            confirmButtonText: 'OK',
+          })
           console.error(err)
         })
     : setError(true)
 }
 
-export const logIn = async (obj, setUser) => {
-  return await signInWithEmailAndPassword(auth, obj.email1, obj.password)
+export const logIn = (obj, setUser) => {
+  signInWithEmailAndPassword(auth, obj.email1, obj.password)
     .then((userCredential) => {
       const correoUser = JSON.stringify(userCredential.user.email)
       localStorage.setItem('user', correoUser)
@@ -33,7 +38,12 @@ export const logIn = async (obj, setUser) => {
     })
     .catch((err) => {
       console.error(err)
-      alert('usuario no existente')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Credenciales incorrectas',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      })
     })
 }
 
@@ -41,7 +51,7 @@ export const signInWithGoogle = () => {
   const provider = new GoogleAuthProvider()
   signInWithPopup(auth, provider)
     .then((res) => {
-      console.log(res)
+      localStorage.setItem('user', res.user.email)
     })
     .catch((err) => {
       console.error(err)
