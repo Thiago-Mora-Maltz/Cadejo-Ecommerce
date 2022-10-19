@@ -1,0 +1,27 @@
+.image-detail{
+    height: 450px;
+    width: 100%;
+}
+
+.h4-detail{
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .image-detail{
+        height: 350px;
+        width: 80%;
+    }
+  }
+@media (max-width: 768px) {
+    .image-detail{
+        height: 250px;
+        width: 80%;
+    }
+    .h4-detail{
+        width: 80%;
+    }
+    .item-count input{
+        width: 70%;
+    }
+  }

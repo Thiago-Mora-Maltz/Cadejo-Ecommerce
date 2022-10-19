@@ -6,6 +6,7 @@ import { db } from '../../firebaseConfig'
 import Spinner from '../common/Spinner'
 import ItemDetail from './ItemDetail'
 import {CartContext} from '../context/CartContext'
+import Swal from 'sweetalert2'
 
 function ItemDetailContainer() {
   const {addToCart} = useContext(CartContext)
@@ -19,7 +20,12 @@ function ItemDetailContainer() {
       addToCart(item, valor)
       setCarrito(false)
     }else{
-      alert('Debes agregar al menos 1 producto')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Debes agregar al menos 1 producto',
+        icon: 'error',
+        confirmButtonText: 'OK',
+      })
     }
   }
 

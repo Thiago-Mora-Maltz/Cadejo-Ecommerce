@@ -2,13 +2,17 @@
     position: sticky;
     top: 0;
     background-color: black;
-    padding: 15px;
     height:10vh;
     z-index: 2000;
   }
   
+  .container-fluid{
+    background-color: black;
+    margin: 0px;
+  }
+
   .navbar-brand{
-    color: #3af49f ;
+    color: #079D5C;
     font-size: 1.5rem;
   }
   
@@ -17,11 +21,11 @@
   }
   
   .navbar-brand:focus{
-    color: #3af49f;
+    color: #079D5C;
   }
   
   .nav-link{
-    color: #3af49f ;
+    color: #079D5C;
     font-size: 1.5rem;
   }
   
@@ -34,11 +38,11 @@
   
   .dropdown-menu{
     background-color: black;
-    color: #3af49f;
+    color: #079D5C;
   }
   .dropdown-item{
     background-color: black;
-    color: #3af49f;
+    color: #079D5C;
   }
   .dropdown-item:hover{
     background-color: black;
