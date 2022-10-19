@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './item.css'
-function Item({nombre, id, descripcion, image}) {
+function Item({nombre, id, image}) {
   return (
     <>
     <div className="card-menu mx-3 my-3">

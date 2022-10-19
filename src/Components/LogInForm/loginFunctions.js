@@ -6,7 +6,8 @@ import {
   GoogleAuthProvider,
 } from 'firebase/auth'
 
-export const auth = getAuth()
+const auth = getAuth()
+export default auth
 
 export const registrarse = async (obj, setUser, setError) => {
   return obj.email1 === obj.email2
